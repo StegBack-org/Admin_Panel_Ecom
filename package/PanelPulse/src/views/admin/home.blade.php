@@ -1,5 +1,5 @@
-@extends('admin.layout.header')
-@section('title', 'Home | Vitality Club')
+@extends('PanelPulse::admin.layout.header')
+@section('title', 'Panel Pulse - Admin CRM and Product management tool')
 @section('style')
     <style>
         .admin-main-cont {

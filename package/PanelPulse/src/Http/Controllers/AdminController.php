@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Kartikey\PanelPulse\Http\Controllers;
+
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {

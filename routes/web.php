@@ -16,7 +16,3 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('admin-2', [AdminController::class, 'index']);
-// Route::get('admin-2', [AdminController::class, 'index'])->name('login');
-// Route::get('admin-2', [AdminController::class, 'index'])->name('register');
