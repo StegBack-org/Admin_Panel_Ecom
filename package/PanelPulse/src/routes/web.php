@@ -2,14 +2,25 @@
 
 use Illuminate\Support\Facades\Route;
 use Kartikey\PanelPulse\Http\Controllers\AdminController;
+use Kartikey\PanelPulse\Http\Controllers\AuthController;
 
-Route::get('admin', [AdminController::class, 'index']);
 
-// Route::get('admin', function () {
-//     return view('PanelPulse::admin.home');
-// });
+Route::middleware(['web'])->group(function () {
 
-// Route::get('/login', [AuthController::class, 'login'])->name('admin-login');
-Route::get('login', function () {
-    return "Login Page";
-})->name('admin-login');
+    Route::middleware(['guest'])->group(function () {
+        Route::get('login', function () {
+            return view('auth.login');
+        })->name('login');
+
+        Route::get('register', function () {
+            return view('auth.login');
+        })->name('register');
+
+        Route::post('login', [AuthController::class, 'loggedIn_PostRequest'])->name('login');
+    });
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+        Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    });
+});
