@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+
+namespace Kartikey\PanelPulse\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class orders_customers extends Model
+class Taxation extends Model
 {
     use HasFactory;
-	protected $guarded = [];
 }

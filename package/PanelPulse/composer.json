@@ -1,8 +1,7 @@
 {
     "name": "kartikey/panel-pulse",
-    "description": "This is a Admin CRM package with integreted theme.",
-    "type": "library",
-    "license": "MIT",
+    "description": "nothing yes",
+    "type": "project",
     "autoload": {
         "psr-4": {
             "Kartikey\\PanelPulse\\": "src/"
@@ -10,12 +9,8 @@
     },
     "authors": [
         {
-            "name": "Kartik Mandothiya",
-            "email": "kartik@stegpearl.com"
+            "name": "Kartik Maandothiya"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {
-
-    }
+    "require": {}
 }

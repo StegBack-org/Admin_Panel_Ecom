@@ -100,7 +100,7 @@
                             <a href="/admin/orders" class="admin-menu orders"><i
                                     class="fas fa-shopping-cart"></i>Orders</a>
                             <div class="collapse" id="ordersCollapse">
-                                <a href="/admin/orders" class="admin-menu1 orders">Orders</a>
+                                <a href="{{ route('admin.orders') }}" class="admin-menu1 orders">Orders</a>
                                 <a href="/admin/checkouts" class="admin-menu1 checkouts">Abandoned checkouts</a>
                             </div>
                             <a href="/admin/products" class="admin-menu products"><i class="fas fa-tag"></i>Products</a>
