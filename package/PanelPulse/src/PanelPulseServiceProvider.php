@@ -2,6 +2,7 @@
 
 namespace Kartikey\PanelPulse;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
 
 class PanelPulseServiceProvider extends ServiceProvider
@@ -15,6 +16,10 @@ class PanelPulseServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../publishable/assets' => public_path('/assets/'),
         ], 'public');
+
+        if (File::exists(__DIR__ . '\Helper\CommonHelper.php')) {
+            require __DIR__ . '\Helper\CommonHelper.php';
+        }
     }
 
     public function register()

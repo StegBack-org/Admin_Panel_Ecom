@@ -35,7 +35,7 @@
                     <p class="subtext1">Accept payments on your store using providers like Razorpay, third-party services,
                         or other payment methods.</p>
                     <p class="subtext1" style="margin-bottom:5px;">Your store accepts payments with:</p>
-                    <p class="subtext1"><b>Razorpay & Cash on delivery</b></p>
+                    <p class="subtext1"><b>Razorpay & Bank Transfer</b></p>
                 </div>
                 <div class="col-8">
                     <div class="container info-cont">
@@ -63,7 +63,7 @@
                     <div class="container info-cont">
                         <div class="row mb-0">
                             <div class="col-6">
-                                <p class="heading2">Cash on Delivery - {{ count($payments->where('payment_mode', 'COD')) }}
+                                <p class="heading2">Bank Transfer - {{ count($payments->where('payment_mode', 'Bank')) }}
                                 </p>
                             </div>
                             <div class="col-6 text-right">

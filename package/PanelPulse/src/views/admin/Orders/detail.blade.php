@@ -117,7 +117,7 @@
                                     <table style="width:100%;height:100%">
                                         <tr>
                                             <td class="text-right align-middle" style="width:100%;height:100%">
-                                                <p class="mb-0">INR <?php echo number_format($orders_item['product_discountedPrice']); ?> x
+                                                <p class="mb-0">USD <?php echo number_format($orders_item['product_discountedPrice']); ?> x
                                                     {{ $orders_item['product_quantity'] }}</p>
                                             </td>
                                         </tr>
@@ -127,7 +127,7 @@
                                     <table style="width:100%;height:100%">
                                         <tr>
                                             <td class="text-right align-middle" style="width:100%;height:100%">
-                                                <p class="mb-0">INR <?php echo number_format($orders_item['product_discountedPrice'] * $orders_item['product_quantity']); ?></p>
+                                                <p class="mb-0">USD <?php echo number_format($orders_item['product_discountedPrice'] * $orders_item['product_quantity']); ?></p>
                                             </td>
                                         </tr>
                                     </table>
@@ -187,7 +187,7 @@
                                 <p class="mb-0">{{ $totalItems }} item</p>
                             </div>
                             <div class="col-6 p-0 text-right">
-                                <p class="mb-0">INR @php echo number_format($orders['subtotal'],2) @endphp</p>
+                                <p class="mb-0">USD @php echo number_format($orders['subtotal'],2) @endphp</p>
                             </div>
                         </div>
                         @if ($orders['discount'] > 0)
@@ -200,12 +200,12 @@
                                         @if ($orders['discount_type'] == 'Percentage')
                                             {{ $orders['discount_value'] }}%
                                         @else
-                                            INR {{ $orders['discount_value'] }}
+                                            USD {{ $orders['discount_value'] }}
                                         @endif - {{ $orders['discount_name'] }}
                                     </p>
                                 </div>
                                 <div class="col-6 p-0 text-right">
-                                    <p class="mb-0">- INR @php echo number_format($orders['discount'],2) @endphp</p>
+                                    <p class="mb-0">- USD @php echo number_format($orders['discount'],2) @endphp</p>
                                 </div>
                             </div>
                         @endif
@@ -217,16 +217,16 @@
                                 <p class="mb-0">{{ $orders['shipping_name'] }}</p>
                             </div>
                             <div class="col-6 p-0 text-right">
-                                <p class="mb-0">INR @php echo number_format($orders['shipping_cost'], 2) @endphp</p>
+                                <p class="mb-0">USD @php echo number_format($orders['shipping_cost'], 2) @endphp</p>
                             </div>
                         </div>
-                        @if ($orders['cod_charges'] > 0)
+                        @if ($orders['Bank_charges'] > 0)
                             <div class="row m-0 mb-2">
                                 <div class="col-6 p-0">
-                                    <p class="mb-0">COD charges</p>
+                                    <p class="mb-0">Bank charges</p>
                                 </div>
                                 <div class="col-6 p-0 text-right">
-                                    <p class="mb-0">INR @php echo number_format($orders['cod_charges'], 2) @endphp</p>
+                                    <p class="mb-0">USD @php echo number_format($orders['Bank_charges'], 2) @endphp</p>
                                 </div>
                             </div>
                         @endif
@@ -242,7 +242,7 @@
                                 </p>
                             </div>
                             <div class="col-6 p-0 text-right">
-                                <p class="mb-0">INR @php echo number_format($orders['tax'],2) @endphp</p>
+                                <p class="mb-0">USD @php echo number_format($orders['tax'],2) @endphp</p>
                             </div>
                         </div>
                         <div class="row m-0 mb-2 pb-2">
@@ -250,7 +250,7 @@
                                 <p class="mb-0"><b>Total</b></p>
                             </div>
                             <div class="col-6 p-0 text-right">
-                                <p class="mb-0"><b>INR @php echo number_format($orders['total_amount'],2) @endphp</b></p>
+                                <p class="mb-0"><b>USD @php echo number_format($orders['total_amount'],2) @endphp</b></p>
                             </div>
                         </div>
                         <div class="row pt-3 pb-2 m-0" style="border-top:1px solid #dddddd;">
@@ -258,7 +258,7 @@
                                 <p class="mb-0">Paid by customer</p>
                             </div>
                             <div class="col-6 p-0 text-right">
-                                <p class="mb-0">INR @php echo number_format($orders['total_amount'],2) @endphp</p>
+                                <p class="mb-0">USD @php echo number_format($orders['total_amount'],2) @endphp</p>
                             </div>
                         </div>
                     </div>

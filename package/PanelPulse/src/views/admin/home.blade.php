@@ -23,7 +23,7 @@
                         <h3 class="info-cont-heading">Total Sales</h3>
                         <p class="mb-0">
                             @if (@$todayOrders[0]['totalSales'] > 0)
-                                INR @php echo number_format(@$todayOrders[0]['totalSales']) @endphp
+                                USD @php echo number_format(@$todayOrders[0]['totalSales']) @endphp
                             @else
                                 No sales yet
                             @endif
@@ -43,7 +43,7 @@
                         <h3 class="info-cont-heading">Total Abandoned Checkouts</h3>
                         <p class="mb-0">
                             @if (@$todayCheckouts[0]['totalCheckouts'] > 0)
-                                INR @php echo number_format(@$todayCheckouts[0]['totalCheckouts']) @endphp
+                                USD @php echo number_format(@$todayCheckouts[0]['totalCheckouts']) @endphp
                             @else
                                 No checkout yet
                             @endif
@@ -89,7 +89,7 @@
             <h3 class="info-cont-subheading">Total sales</h3>
             <p class="mb-0">
                 @if (@$orders[0]['totalSales'] > 0)
-                    INR @php echo number_format(@$orders[0]['totalSales']) @endphp
+                    USD @php echo number_format(@$orders[0]['totalSales']) @endphp
                 @else
                     No orders yet
                 @endif
@@ -107,7 +107,7 @@
             <h3 class="info-cont-subheading">Total abandoned checkouts</h3>
             <p class="mb-0">
                 @if (@$checkouts[0]['totalCheckouts'] > 0)
-                    INR @php echo number_format(@$checkouts[0]['totalCheckouts']) @endphp
+                    USD @php echo number_format(@$checkouts[0]['totalCheckouts']) @endphp
                 @else
                     No abandoned checkout yet
                 @endif

@@ -46,7 +46,7 @@
                                             style="margin-right:5px;"></i>{{ $payment->country }}</p>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a href="/admin/settings/shipping/{{ $payment->country }}">Manage rates</a>
+                                    <a href="/admin/settings/shipping/{{ $payment->country_id }}">Manage rates</a>
                                 </div>
                             </div>
                         </div>

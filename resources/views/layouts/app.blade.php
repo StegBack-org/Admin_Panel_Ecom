@@ -123,7 +123,7 @@
                                                             <p>{{ $product['variantValue'] }}</p>
                                                         @endif
                                                         <p>Quantity: {{ $product['quantity'] }}</p>
-                                                        <p class="mb-0">INR <?php echo number_format($product['price'] * $product['quantity']); ?></p>
+                                                        <p class="mb-0">USD <?php echo number_format($product['price'] * $product['quantity']); ?></p>
                                                     </div>
                                                 </div>
                                             @endforeach

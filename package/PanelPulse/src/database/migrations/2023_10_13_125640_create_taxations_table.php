@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('taxations', function (Blueprint $table) {
             $table->id();
+            $table->string('country');
+            $table->integer('tax');
+            $table->string('charge')->nullable();
             $table->timestamps();
         });
     }

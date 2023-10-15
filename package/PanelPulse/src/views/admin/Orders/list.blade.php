@@ -58,7 +58,7 @@
                                     @endphp</td>
                                     <td>{{ $order[0]['orders_customers']['first_name'] }}
                                         {{ $order[0]['orders_customers']['last_name'] }}</td>
-                                    <td class="text-center">INR @php echo number_format($order[0]['total_amount'], 2) @endphp</td>
+                                    <td class="text-center">USD @php echo number_format($order[0]['total_amount'], 2) @endphp</td>
                                     <td class="text-center">
                                         @if ($order[0]['payment_status'] == 'Paid')
                                             <div class="block1"><i
@@ -124,7 +124,7 @@
                                             echo date_format($order[0]['created_at'], 'h:i a');
                                         @endphp</td>
                                         <td>{{ $order[0]['first_name'] }} {{ $order[0]['last_name'] }}</td>
-                                        <td class="text-center">INR @php echo number_format($order[0]['total_amount']) @endphp</td>
+                                        <td class="text-center">USD @php echo number_format($order[0]['total_amount']) @endphp</td>
                                         <td class="text-center">
                                             @if ($order[0]['payment_status'] == 'Paid')
                                                 <div class="block1"><i
@@ -188,7 +188,7 @@
                                             echo date_format($order[0]['created_at'], 'h:i a');
                                         @endphp</td>
                                         <td>{{ $order[0]['first_name'] }} {{ $order[0]['last_name'] }}</td>
-                                        <td class="text-center">INR @php echo number_format($order[0]['total_amount']) @endphp</td>
+                                        <td class="text-center">USD @php echo number_format($order[0]['total_amount']) @endphp</td>
                                         <td class="text-center">
                                             @if ($order[0]['payment_status'] == 'Paid')
                                                 <div class="block1"><i
@@ -252,7 +252,7 @@
                                             echo date_format($order[0]['created_at'], 'h:i a');
                                         @endphp</td>
                                         <td>{{ $order[0]['first_name'] }} {{ $order[0]['last_name'] }}</td>
-                                        <td class="text-center">INR @php echo number_format($order[0]['total_amount']) @endphp</td>
+                                        <td class="text-center">USD @php echo number_format($order[0]['total_amount']) @endphp</td>
                                         <td class="text-center">
                                             @if ($order[0]['payment_status'] == 'Paid')
                                                 <div class="block1"><i
