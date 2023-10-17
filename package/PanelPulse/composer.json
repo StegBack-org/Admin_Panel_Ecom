@@ -8,7 +8,7 @@
             "Kartikey\\PanelPulse\\": "src/"
         },
         "files": [
-            "src/Helper/CommonHelper.php"
+            "src/app/CommonHelper.php"
         ]
     },
     "authors": [

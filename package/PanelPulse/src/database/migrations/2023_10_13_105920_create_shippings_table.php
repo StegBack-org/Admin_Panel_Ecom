@@ -16,7 +16,8 @@ class CreateShippingsTable extends Migration
         Schema::create('shippings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('shipping_provider')->nullable();
+            $table->enum('type', ['free', 'paid'])->nullable();
+            $table->string('cost')->nullable();
             $table->timestamps();
         });
     }

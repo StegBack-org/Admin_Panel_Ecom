@@ -18,7 +18,7 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('country_id')->constrained('countries');
+            $table->integer('country_id');
             $table->string('country');
             $table->string('state')->nullable();
             $table->string('payment_mode');

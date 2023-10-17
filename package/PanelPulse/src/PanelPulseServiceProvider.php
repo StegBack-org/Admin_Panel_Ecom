@@ -9,6 +9,11 @@ class PanelPulseServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+
+        if (File::exists(__DIR__ . '\app\CommonHelper.php')) {
+            require __DIR__ . '\app\CommonHelper.php';
+        }
+
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/views', 'PanelPulse');
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
@@ -22,10 +27,6 @@ class PanelPulseServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/lang' => resource_path('lang/'),
         ], 'lang');
-
-        if (File::exists(__DIR__ . '\Helper\CommonHelper.php')) {
-            require __DIR__ . '\Helper\CommonHelper.php';
-        }
     }
 
     public function register()

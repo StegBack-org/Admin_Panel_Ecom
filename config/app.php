@@ -192,7 +192,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // ...
+        'CommonHelper' => Kartikey\PanelPulse\app\CommonHelper::class,
     ])->toArray(),
 
 ];

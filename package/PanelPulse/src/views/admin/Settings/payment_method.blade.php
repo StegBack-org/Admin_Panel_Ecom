@@ -99,7 +99,7 @@
                                 <select class="custom-select" id="validationCustom01" name="country" required
                                     onchange="getState(this.options[this.selectedIndex].text)">
                                     <option selected disabled value="">Choose country...</option>
-                                    @foreach (getCountryList() as $key => $country)
+                                    @foreach ((new CommonHelper())->getCountryList() as $key => $country)
                                         <option value="{{ $key . '-' . $country['country_name'] }}">
                                             {{ $country['country_name'] }}
                                         </option>

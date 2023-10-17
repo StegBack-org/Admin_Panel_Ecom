@@ -1,5 +1,5 @@
 @extends('PanelPulse::admin.layout.header')
-@section('title', 'Shipping Rates | ' . env('APP_NAME'))
+@section('title', 'Manage Shipping Rates | ' . env('APP_NAME'))
 @section('style')
     <style>
         .admin-menu.settings {
@@ -10,6 +10,7 @@
     </style>
 @endsection
 @section('content')
+
     <div class="container">
         <div class="container mb-4">
             <div class="row">
@@ -97,7 +98,7 @@
                                 <select class="custom-select" id="validationCustom01" name="country" required
                                     onchange="getState(this.options[this.selectedIndex].text)">
                                     <option selected disabled value="">Choose country...</option>
-                                    @foreach (getCountryList() as $key => $country)
+                                    @foreach ((new CommonHelper())->getCountryList() as $key => $country)
                                         <option value="{{ $key . '-' . $country['country_name'] }}">
                                             {{ $country['country_name'] }}
                                         </option>
