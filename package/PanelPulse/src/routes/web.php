@@ -6,10 +6,18 @@ use Illuminate\Support\Facades\Route;
 use Kartikey\PanelPulse\Http\Controllers\AdminController;
 use Kartikey\PanelPulse\Http\Controllers\AuthController;
 use Kartikey\PanelPulse\Http\Controllers\OrderController;
+use Kartikey\PanelPulse\Services\languageService;
 
-// Define middleware groups outside of route definitions
+$lang = (new languageService)->getRouteLocale();
+define('lang', $lang);
 
-// Middleware group for 'guest' (non-authenticated users)
+Route::get('lang/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+});
+
+
 Route::middleware(['web', 'guest'])->group(function () {
     Route::get('login', function () {
         return view('auth.login');
@@ -22,7 +30,7 @@ Route::middleware(['web', 'guest'])->group(function () {
     Route::post('login', [AuthController::class, 'loggedIn_PostRequest'])->name('login');
 });
 
-// Middleware group for 'auth' (authenticated users)
+
 Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
@@ -37,6 +45,8 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::get('/settings/shipping', [SettingController::class, 'shippings'])->name('admin.settings.shipping');
         Route::get('/settings/shipping/{country}', [SettingController::class, 'shippings_rates'])->name('admin.settings.shipping.rates');
         Route::post('/settings/shipping/add', [SettingController::class, 'shipping_add'])->name('admin.settings.shipping.add');
+        Route::post('/settings/shipping/add-country', [SettingController::class, 'shipping_add_country'])->name('admin.settings.shipping.add-country');
+        Route::delete('/settings/shipping/country/delete', [SettingController::class, 'shipping_country_delete'])->name('admin.settings.shipping.country.delete');
 
         //? Done Taxation Settings
         Route::get('/settings/taxes', [SettingController::class, 'taxes'])->name('admin.settings.taxes');

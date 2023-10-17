@@ -31,7 +31,9 @@
                                 <tr>
                                     <td class="align-middle" style="width:100%;height:100%;">
                                         <a class="navbar-brand" href="{{ url('admin') }}"><img class="icon"
-                                                src="{{ asset('apple-touch-icon.png') }}"> {{ config('app.name') }}</a>
+                                                src="{{ asset('apple-touch-icon.png') }}">
+                                            {{ __('Panel Pulse') }}
+                                        </a>
                                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -84,6 +86,38 @@
                                                         </div>
                                                     </li>
                                                 @endguest
+
+                                                <li class="nav-item dropdown">
+                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle"
+                                                        href="#" role="button" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false" v-pre
+                                                        style="line-height:28px;">
+                                                        EN<span class="caret"></span>
+                                                    </a>
+
+                                                    <div class="dropdown-menu dropdown-menu-right"
+                                                        aria-labelledby="navbarDropdown">
+                                                        <a class="dropdown-item" href="/lang/en">
+                                                            <img class="tax-flag"
+                                                                src="https://media.istockphoto.com/id/486407806/vector/union-jack.jpg?s=612x612&w=0&k=20&c=KPRndA_Czak9T0w_Eq3GnhRaNxERiEiw2cjZe5GBY-E=" />
+                                                            EN</a>
+                                                        <a class="dropdown-item"
+                                                                href="/lang/es">
+                                                            <img class="tax-flag"
+                                                                src="https://www.shutterstock.com/image-illustration/3d-illustration-flag-spain-background-260nw-2142858893.jpg" />
+                                                            ES</a>
+                                                        <a class="dropdown-item" href="/lang/de">
+                                                            <img class="tax-flag"
+                                                                src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/800px-Flag_of_Germany.svg.png" />
+                                                            DE</a>
+                                                        <a class="dropdown-item" href="/lang/da">
+                                                            <img class="tax-flag"
+                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/2560px-Flag_of_Denmark.svg.png" />
+                                                            DA</a>
+
+                                                    </div>
+                                                </li>
+
                                             </ul>
                                         </div>
                                     </td>
@@ -103,7 +137,8 @@
                                 <a href="{{ route('admin.orders') }}" class="admin-menu1 orders">Orders</a>
                                 <a href="/admin/checkouts" class="admin-menu1 checkouts">Abandoned checkouts</a>
                             </div>
-                            <a href="/admin/products" class="admin-menu products"><i class="fas fa-tag"></i>Products</a>
+                            <a href="/admin/products" class="admin-menu products"><i
+                                    class="fas fa-tag"></i>Products</a>
                             <div class="collapse" id="productsCollapse">
                                 <a href="/admin/products" class="admin-menu1 products">All products</a>
                                 <a href="/admin/categories" class="admin-menu1 categories">Categories</a>

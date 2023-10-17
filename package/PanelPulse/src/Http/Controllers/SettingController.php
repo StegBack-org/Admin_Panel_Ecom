@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Kartikey\PanelPulse\Helper\CommonHelper;
 use Kartikey\PanelPulse\Models\Payment;
 use Kartikey\PanelPulse\Models\Shipping;
+use Kartikey\PanelPulse\Models\ShippingCountry;
 use Kartikey\PanelPulse\Models\Taxation;
 
 class SettingController extends Controller
@@ -19,29 +20,49 @@ class SettingController extends Controller
 
     public function shippings()
     {
-        $payments = Payment::get();
-        return view('PanelPulse::admin.settings.shipping', compact('payments'));
+        $shipping = Shipping::get();
+        return view('PanelPulse::admin.settings.shipping', compact('shipping'));
     }
 
-    public function shippings_rates($country)
+    public function shippings_rates($shippingClass)
     {
-        $shippings = Shipping::where('id', $country)->orderBy('name', 'asc')->get();
-        return view('PanelPulse::admin.settings.shipping_list', ['shippings' => $shippings]);
+        $shippings = ShippingCountry::where('shipping_id', $shippingClass)
+            ->with('shipping_class')
+            ->get();
+
+        return view('PanelPulse::admin.settings.shipping_list', ['shippings' => $shippings, 'shipping_class' => $shippingClass]);
     }
 
     public function shipping_add(Request $request)
     {
         Shipping::create([
-            'country' => $request->country,
-            'state' => $request->state,
-            'deliverable' => 'Yes',
+            'type' => $request->type,
             'name' => $request->name,
             'cost' => $request->cost,
-            'min_order_value' => $request->min_order_value,
-            'max_order_value' => $request->max_order_value
         ]);
 
         return redirect()->back();
+    }
+
+    public function shipping_add_country(Request $request)
+    {
+        $countryArray = explode('-', "$request->country");
+        ShippingCountry::create([
+            'shipping_id' => $request->shipping_id,
+            'country_id' => $countryArray[0],
+            'country_name' => $countryArray[1],
+            'state' => $request->state,
+            'cost' => $request->cost,
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function shipping_country_delete(Request $request)
+    {
+        $ShippingCountry = ShippingCountry::where('id', $request->id)->first();
+        $ShippingCountry->delete();
+        return true;
     }
 
     //*TAxation Here

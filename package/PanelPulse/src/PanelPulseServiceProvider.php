@@ -13,9 +13,15 @@ class PanelPulseServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/views', 'PanelPulse');
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
 
+        $this->loadJsonTranslationsFrom(__DIR__ . '/lang');
+
         $this->publishes([
             __DIR__ . '/../publishable/assets' => public_path('/assets/'),
         ], 'public');
+
+        $this->publishes([
+            __DIR__ . '/lang' => resource_path('lang/'),
+        ], 'lang');
 
         if (File::exists(__DIR__ . '\Helper\CommonHelper.php')) {
             require __DIR__ . '\Helper\CommonHelper.php';
