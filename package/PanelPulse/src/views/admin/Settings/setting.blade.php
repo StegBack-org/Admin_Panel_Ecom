@@ -55,6 +55,19 @@
                         </div>
                     </a>
                 </div>
+                <div class="col-4 settings-block">
+                    <a href="/admin/settings/theme" style="color:#626262;text-decoration:none;">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="col-10">
+                                <h3 class="info-cont-heading" style="margin-bottom:4px;">Theme Setting</h3>
+                                <p>Manage how you store looks</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

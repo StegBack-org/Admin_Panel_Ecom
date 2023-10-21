@@ -9,6 +9,8 @@
     <title>@yield('title', 'Home | Panel Pulse - Admin CRM and Product management tool')</title>
     <meta name="robots" content="noindex, follow">
 
+    {{-- <meta http-equiv="refresh" content="2"> --}}
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/vc-owl-bootstrap-photoswipe.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/vc-admin-18-11-01.css') }}" />
     <style>
@@ -101,8 +103,7 @@
                                                             <img class="tax-flag"
                                                                 src="https://media.istockphoto.com/id/486407806/vector/union-jack.jpg?s=612x612&w=0&k=20&c=KPRndA_Czak9T0w_Eq3GnhRaNxERiEiw2cjZe5GBY-E=" />
                                                             EN</a>
-                                                        <a class="dropdown-item"
-                                                                href="/lang/es">
+                                                        <a class="dropdown-item" href="/lang/es">
                                                             <img class="tax-flag"
                                                                 src="https://www.shutterstock.com/image-illustration/3d-illustration-flag-spain-background-260nw-2142858893.jpg" />
                                                             ES</a>

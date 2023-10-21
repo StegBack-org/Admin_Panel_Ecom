@@ -60,6 +60,13 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::post('/settings/payments/methods/add', [SettingController::class, 'payments_method_add'])->name('admin.settings.payments.methods.add');
         Route::post('/settings/payments/methods/update', [SettingController::class, 'payments_method_update'])->name('admin.settings.payments.methods.update');
         Route::delete('/settings/payments/methods/delete', [SettingController::class, 'payments_method_delete'])->name('admin.settings.payments.methods.delete');
+
+        //? Theme Setting
+        Route::get('/settings/theme', [SettingController::class, 'theme'])->name('admin.settings.theme');
+        Route::get('/settings/theme/{id}', [SettingController::class, 'theme_setting'])->name('admin.settings.theme.view');
+        // Route::post('/settings/payments/methods/add', [SettingController::class, 'payments_method_add'])->name('admin.settings.payments.methods.add');
+        // Route::post('/settings/payments/methods/update', [SettingController::class, 'payments_method_update'])->name('admin.settings.payments.methods.update');
+        // Route::delete('/settings/payments/methods/delete', [SettingController::class, 'payments_method_delete'])->name('admin.settings.payments.methods.delete');
     });
 
 

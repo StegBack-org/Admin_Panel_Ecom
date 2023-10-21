@@ -10,6 +10,7 @@ use Kartikey\PanelPulse\Models\Payment;
 use Kartikey\PanelPulse\Models\Shipping;
 use Kartikey\PanelPulse\Models\ShippingCountry;
 use Kartikey\PanelPulse\Models\Taxation;
+use Kartikey\PanelPulse\Models\Theme;
 
 class SettingController extends Controller
 {
@@ -141,5 +142,17 @@ class SettingController extends Controller
         Taxation::where('country', $payment->country)->delete();
         $payment->delete();
         return true;
+    }
+
+    public function theme()
+    {
+        $theme = Theme::get();
+        return view('PanelPulse::admin.settings.theme', ['theme' => $theme]);
+    }
+
+    public function theme_setting($id)
+    {
+        $theme = Theme::find($id);
+        return view('PanelPulse::admin.settings.theme-setting', ['theme' => $theme]);
     }
 }
