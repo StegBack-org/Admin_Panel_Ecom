@@ -11,3 +11,5 @@
 5. Run command to publish the assets of this package:
 6. run `php artisan vendor:publish --provider="Kartikey\PanelPulse\PanelPulseServiceProvider"`
 7. Add following code into config/app.php providers array : `'Kartikey\PanelPulse\PanelPulseServiceProvider'`.
+8. Login route should be `{{ route('login') }}`
+9. `role` column fillable in User Models

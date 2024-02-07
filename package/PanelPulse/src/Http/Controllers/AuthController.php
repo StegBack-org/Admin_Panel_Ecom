@@ -36,7 +36,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             Auth::login(Auth::user());
 
-            if (auth()->user()->email === env('ADMIN_EMAIL')) {
+            if (auth()->user()->role === env('ADMIN_ROLE')) {
                 return redirect()->route('admin');
             }
             return redirect()->intended('/');
